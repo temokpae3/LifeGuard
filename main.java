@@ -1,21 +1,17 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
+import java.util.Scanner;
 
-public class wordRandomizer {
-
-    public ArrayList<String> wordArray(){
-        ArrayList<String> words = new ArrayList<>();
-        words.addAll(Arrays.asList(("algorithm object-oriented fractal concatenate " +
-                "javascript hacking iteration recursion pointer garbage-collection blockchain " +
-                "ubuntu neural-network string instance machine-learning brute-force binary big-endian little-endian").split(" ")));
-        return words;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Name your character: ");
+        String name = scan.next();
+        System.out.print("What gender pronouns does " + name +" use?: ");
+        String pronoun = scan.next();
+        System.out.println("Hello I am " + name + " my pronouns are " + pronoun + ".");
+        wordRandomizer myWords = new wordRandomizer();
+        ArrayList<String> choices = myWords.wordArray();
+        String myWord = myWords.randomWord(choices);
+        System.out.print(myWord);
     }
-
-    public String randomWord(ArrayList<String> wordList){
-        Random rand = new Random();
-        String luckyWord = wordList.get(rand.nextInt(20));
-        return luckyWord;
-    }
-
 }
