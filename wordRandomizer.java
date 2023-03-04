@@ -16,5 +16,13 @@ public class wordRandomizer {
     //variable ubuntu boolean branch character
     //command concatenate condition constant compiler
     //exponent instance iteration method pointer
+    //fractal 
+    //lambda-calculas 
+    //abstraction 
+    //brute-force 
+    //garbage-collection 
+    //constructor 
+    //recursion 
+    //hacking
 
 }
