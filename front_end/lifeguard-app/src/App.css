@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .App {
   text-align: center;
 }
@@ -7,14 +9,38 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.font-face-fw {
+ font-family: "FLOODWATER";
+ font-size: 200px;
+}
+
+.start-btn{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    margin:5px;
+    font-weight: bold;
+    padding: 10px 0 10px 10px ;
+    background-color: #001216;
+    text-shadow: -2px -2px cyan, 1px 1px blue;
+    color: white;
+    -webkit-border-radius: 7px;
+ 	-moz-border-radius: 7px;
+ 	-o-border-radius: 7px;
+ 	border-radius: 7px;
+    box-shadow: 0 .2em #03879E;
+    cursor: pointer;
+}
+
+.start-btn:active {
+	box-shadow: none;
+	position: relative;
+	top: .2em;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url("background.jpg");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,17 +48,5 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-size: cover;
 }
