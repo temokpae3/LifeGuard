@@ -8,4 +8,13 @@ public class wordRandomizer {
         words.addAll(Arrays.asList("Some Nice Words".split(" ")));
     }
 
+    //words to add:
+    //algorithm argument arrays object-oriented parameter
+    // assignment operator binary block program
+    // javascript linux declare machine neuron
+    // pointer python script string terminal
+    //variable ubuntu boolean branch character
+    //command concatenate condition constant compiler
+    //exponent instance iteration method pointer
+
 }

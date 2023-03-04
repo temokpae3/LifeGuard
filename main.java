@@ -8,5 +8,15 @@ public class Main {
         String pronoun = scan.next();
         System.out.println("Hello I am " + name + " my pronouns are " + pronoun);
 
+
+
+
     }
+
+
+
+
+
+
+
 }
