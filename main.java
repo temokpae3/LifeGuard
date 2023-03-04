@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -9,9 +10,8 @@ public class Main {
         String pronoun = scan.next();
         System.out.println("Hello I am " + name + " my pronouns are " + pronoun + ".");
         wordRandomizer myWords = new wordRandomizer();
-        for(int i=0; i<20; i++){
-            System.out.println(myWords.wordArray().get(i));
-        }
-
+        ArrayList<String> choices = myWords.wordArray();
+        String myWord = myWords.randomWord(choices);
+        System.out.println(myWord);
     }
 }
