@@ -9,7 +9,7 @@
   pointer-events: none;
 }
 
-.font-face-fw {
+.game-title {
  font-family: "FLOODWATER";
  font-size: 200px;
 }
@@ -22,7 +22,7 @@
     margin:5px;
     font-weight: bold;
     padding: 10px 0 10px 10px ;
-    background-color: #001216;
+    background-color: #00252c;
     text-shadow: -2px -2px cyan, 1px 1px blue;
     color: white;
     -webkit-border-radius: 7px;
