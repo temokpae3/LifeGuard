@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './game.css';
 
+
 function Start() {
   return (
     <div className="start">
