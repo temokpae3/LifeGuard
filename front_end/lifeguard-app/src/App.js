@@ -4,12 +4,11 @@ import './App.css';
 import './FLOODWATER-NORMAL.otf';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import MuiToggleButton from '@mui/material/ToggleButton';
-import { styled } from '@mui/material/styles';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 const style = {
   position: 'absolute',
@@ -24,20 +23,20 @@ const style = {
   p: 4,
 };
 
+
+
 function App() {
+    const [alignment, setAlignment] = React.useState('web');
+
+    const handleChange = (event, newAlignment) => {
+        setAlignment(newAlignment);
+    };
+
     const [open, setOpen] = React.useState(false);
-
-    const [setAlignment] = React.useState('left');
-
-    const [isActive, setActive] = React.useState(false);
 
     const handleClick = () => {
         setOpen(true);
     }
-
-    const toggleClass = () => {
-        setActive(isActive);
-    };
 
   return (
     <div className="App">
@@ -55,9 +54,17 @@ function App() {
                 <Typography align="center" id="modal-modal-title" variant="h6" component="h2">
                    Choose your gender:
                 </Typography>
-                <Button style={{transform: 'translate(290%, 0%)'}} variant="outlined" onClick={() => {alert('clicked');}}>Male</Button>
-                <Button style={{transform: 'translate(240%, 0%)'}} variant="outlined" onClick={() => {alert('clicked');}}>Female</Button>
-                <Button style={{transform: 'translate(190%, 0%)'}} variant="outlined" onClick={() => {alert('clicked');}}>Nonbinary</Button>
+                <ToggleButtonGroup
+                      color="primary"
+                      value={alignment}
+                      exclusive
+                      onChange={handleChange}
+                      aria-label="Platform"
+                    >
+                      <ToggleButton style={{transform: 'translate(340%, 0%)'}} value="male">Male</ToggleButton>
+                      <ToggleButton style={{transform: 'translate(263%, 0%)'}} value="female">Female</ToggleButton>
+                      <ToggleButton style={{transform: 'translate(196.5%, 0%)'}} value="nonbinary">Nonbinary</ToggleButton>
+                    </ToggleButtonGroup>
                 <div>
                     <IconButton style={{ transform: 'translate(1300%, 300%' }} aria-label="arrow-forward">
                         <ArrowForwardIosIcon />
