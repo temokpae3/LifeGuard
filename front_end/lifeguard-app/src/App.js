@@ -7,8 +7,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import MuiToggleButton from '@mui/material/ToggleButton';
+import { styled } from '@mui/material/styles';
 
 const style = {
   position: 'absolute',
@@ -26,9 +27,17 @@ const style = {
 function App() {
     const [open, setOpen] = React.useState(false);
 
+    const [setAlignment] = React.useState('left');
+
+    const [isActive, setActive] = React.useState(false);
+
     const handleClick = () => {
         setOpen(true);
     }
+
+    const toggleClass = () => {
+        setActive(isActive);
+    };
 
   return (
     <div className="App">
@@ -39,23 +48,20 @@ function App() {
         <button onClick={handleClick} className="start-btn">PRESS START</button>
         <Modal open={open}>
             <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
+                <Typography id="modal-modal-title" variant="h6" component="h2" align="center">
                   Name your character:
                 </Typography>
-                <TextField id="outlined-basic" label="Name" variant="outlined" />
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                   Choose your gender
+                <TextField style={{transform: 'translate(107%, 0%)'}} id="outlined-basic" label="Name" variant="outlined" />
+                <Typography align="center" id="modal-modal-title" variant="h6" component="h2">
+                   Choose your gender:
                 </Typography>
-                <Button variant="outlined" onClick={() => {alert('clicked');}}>Male</Button>
-                <Button variant="outlined" onClick={() => {alert('clicked');}}>Female</Button>
-                <Button variant="outlined" onClick={() => {alert('clicked');}}>Nonbinary</Button>
+                <Button style={{transform: 'translate(290%, 0%)'}} variant="outlined" onClick={() => {alert('clicked');}}>Male</Button>
+                <Button style={{transform: 'translate(240%, 0%)'}} variant="outlined" onClick={() => {alert('clicked');}}>Female</Button>
+                <Button style={{transform: 'translate(190%, 0%)'}} variant="outlined" onClick={() => {alert('clicked');}}>Nonbinary</Button>
                 <div>
-                <IconButton aria-label="arrow-backward">
-                    <ArrowBackIosIcon />
-                </IconButton>
-                <IconButton aria-label="arrow-forward">
-                    <ArrowForwardIosIcon />
-                </IconButton>
+                    <IconButton style={{ transform: 'translate(1300%, 300%' }} aria-label="arrow-forward">
+                        <ArrowForwardIosIcon />
+                    </IconButton>
                 </div>
             </Box>
         </Modal>
