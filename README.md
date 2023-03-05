@@ -7,7 +7,7 @@ The game would proceed in the same way, with players guessing letters in an effo
 Our project is called LifeGuard, the idea is based on the well-known hangman game, a popular game that everyone has played before. However, in order to make it uniquely ours, we gave it a small tweak. We chose to drown the character we designed rather than hang them.
 
 # How we built it
-Challenges we ran into
+# Challenges we ran into
 Sadly, we were unable to complete our project. Although, we have both the front and back ends of it there were issues.
 
 1. We didn't have them put together.
