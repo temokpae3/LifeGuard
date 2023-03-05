@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Main {
 
     static int wrongGuessesCounter=0;
-    static boolean guessedWord= false;//true if successfully guessed word
     static boolean[] displayTable;
+    static ArrayList<String> alreadyGuessedLetters= new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -18,7 +18,7 @@ public class Main {
 
         System.out.println("Hello I am " + name + " my pronouns are " + pronoun + ".");
 
-        wordRandomizer myWords = new wordRandomizer();
+        WordRandomizer myWords = new WordRandomizer();
         ArrayList<String> choices = myWords.wordArray();
         String myWord = myWords.randomWord(choices);//word to guess
         displayTable= new boolean[myWord.length()];//indices correspond to myWord; if index 1 is true, display letter at index 1 (otherwise display _)
@@ -28,13 +28,12 @@ public class Main {
         if(dashLocation != -1)
             displayTable[dashLocation]= true;//if dash is found in word, display it (without user guessing)
 
-        //System.out.println("word have to guess: "+myWord);
+        System.out.println("word have to guess: "+myWord);
 
 
-        while(wrongGuessesCounter<7 && successfullyGuessedWord()==false){
+        while(wrongGuessesCounter<7 && !successfullyGuessedWord()){
             System.out.print("Enter letter guess: ");
-            String letter= getNextLetter(scan.next());
-            //String letter= scan.next();
+            String letter= getNextLetter(scan.next()).toLowerCase();
             if(myWord.contains(letter)){//if letter is in word
                 System.out.print("Letter "+letter+" FOUND: ");
                 for(int i=0; i<myWord.length();i++){//set each index with guessed letter to true
@@ -43,18 +42,24 @@ public class Main {
                     }
                 }
                 display(displayTable, myWord);
-
             }else{//if letter not in word
-                System.out.println("Letter NOT found. Guesses remaining: "+ Integer.toString(6-wrongGuessesCounter));
-                wrongGuessesCounter++;
-            }
-            //System.out.println("findDashLocation= "+findDashLocation(myWord));
 
+                if(!alreadyGuessedLetters.contains(letter)) {//if not already guessed this letter
+                    System.out.println("Letter NOT found. Guesses remaining: " + Integer.toString(6 - wrongGuessesCounter));
+                    wrongGuessesCounter++;
+                }else{//if already guessed this letter
+                    System.out.println("Already guessed this letter!");
+                }
+
+            }
+
+            alreadyGuessedLetters.add(letter);//add letter to letters already guessed
 
         }
 
+
         if(successfullyGuessedWord()) {
-            System.out.println("YOU WON!");
+            System.out.println("YOU SURVIVED!");
         }else{
             System.out.println("You drowned!");
             System.out.println("The word is: "+myWord);
