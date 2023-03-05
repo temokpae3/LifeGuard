@@ -54,9 +54,9 @@ public class Main {
         }
 
         if(successfullyGuessedWord()) {
-            System.out.println("CONGRATS, YOU DIDN'T DROWN!");
+            System.out.println("YOU WON!");
         }else{
-            System.out.println("Oh no, You drowned!");
+            System.out.println("You drowned!");
             System.out.println("The word is: "+myWord);
         }
 
