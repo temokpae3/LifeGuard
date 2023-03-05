@@ -25,8 +25,8 @@ function Start() {
                 src={water_1}
             />
             <span
-            style={{height: 290, transform: 'translate(-10%, -215%)'}}
-            class="blink">_ _ _ _ _ _ _ _ _ _</span>
+            style={{height: 290, transform: 'translate(0%, -215%)'}}
+            class="blink">_ _ _ _ _ _ _ _ _ _ _</span>
     </header>
     </div>
   );
