@@ -19,3 +19,17 @@
   font-size: calc(10px + 2vmin);
   background-size: cover;
 }
+
+.blink {
+ animation-name: blinker;
+ animation-duration: 1s;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite;
+ color: white;
+}
+
+@keyframes blinker {
+ 0% { opacity: 1.0; }
+ 50% { opacity: 0.0; }
+ 100% { opacity: 1.0; }
+}
