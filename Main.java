@@ -18,7 +18,7 @@ public class Main {
 
         System.out.println("Hello I am " + name + " my pronouns are " + pronoun + ".");
 
-        WordRandomizer myWords = new WordRandomizer();
+        wordRandomizer myWords = new wordRandomizer();
         ArrayList<String> choices = myWords.wordArray();
         String myWord = myWords.randomWord(choices);//word to guess
         displayTable= new boolean[myWord.length()];//indices correspond to myWord; if index 1 is true, display letter at index 1 (otherwise display _)
