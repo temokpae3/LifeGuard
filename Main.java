@@ -28,8 +28,6 @@ public class Main {
         if(dashLocation != -1)
             displayTable[dashLocation]= true;//if dash is found in word, display it (without user guessing)
 
-        System.out.println("word have to guess: "+myWord);
-
 
         while(wrongGuessesCounter<7 && !successfullyGuessedWord()){
             System.out.print("Enter letter guess: ");
